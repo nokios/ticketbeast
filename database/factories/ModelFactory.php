@@ -22,3 +22,18 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(\App\Concert::class, function (Faker\Generator $faker) {
+    return [
+        'title'                  => 'Example Band',
+        'subtitle'               => 'with The Fake Openers',
+        'date'                   => \Carbon\Carbon::parse('+2 weeks'),
+        'ticket_price'           => 2000, // cents
+        'venue'                  => 'The Example Theatre',
+        'venue_address'          => '123 Example Lane',
+        'city'                   => 'Fakeville',
+        'state'                  => 'PA',
+        'zip'                    => '12345',
+        'additional_information' => 'Some sample additional information',
+    ];
+});
